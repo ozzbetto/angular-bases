@@ -1,4 +1,18 @@
 <ul class="list-group">
-  <li class="list-group-item">Krillin - 500</li>
-  <li class="list-group-item">Goku - 10.000</li>
+  <li *ngFor="let character of characterList;
+  let i = index
+  let isFirst = first;
+  let isLast = last;
+  let isEven = even;
+  let isOdd = odd;
+  "
+    class="list-group-item" [ngClass]="{'list-group-item-warning':isLast, 'list-group-item-info': isFirst}">
+    <span class="text-primary"> {{ i + 1 }}- </span>
+    <span>{{ character.name }} -</span>
+    <strong>Power: </strong>
+    <span>{{ character.power }}</span>
+
+    <span>Es el primero: {{ i === 0 }}</span>
+    <span>Es el último: {{ i === characterList.length - 1 }}</span>
+  </li>
 </ul>
