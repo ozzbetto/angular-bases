@@ -20,4 +20,13 @@ export class MainPageComponent {
     name: 'Vegeta',
     power: 7500
   }];
+
+  onNewCharacter( character: Character): void {
+    this.characters.push( character );
+  }
+
+  onDeleteCharacter( index: number ): void {
+    this.characters.splice( index, 1 );
+  }
+
 }
